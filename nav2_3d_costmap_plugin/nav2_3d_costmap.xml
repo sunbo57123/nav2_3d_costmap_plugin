@@ -1,0 +1,5 @@
+<library path="nav2_gradient_costmap_plugin_core">
+  <class name="nav2_gradient_costmap_plugin/Nav23dStaticLayer" type="nav2_gradient_costmap_plugin::Nav23dStaticLayer" base_class_type="nav2_costmap_2d::CostmapLayer">
+    <description>3D static costmap plugin</description>
+  </class>
+</library>
