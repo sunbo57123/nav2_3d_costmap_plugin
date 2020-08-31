@@ -99,7 +99,7 @@ void
 Nav23dStaticLayer::reset()
 {
 }
-
+// 更新bounds
 void
 Nav23dStaticLayer::updateBounds(
     double robot_x, double robot_y, double robot_yaw, double * min_x,
@@ -123,7 +123,7 @@ Nav23dStaticLayer::updateBounds(
 
     
 }
-
+// 更新bounds内的cost
 void
 Nav23dStaticLayer::updateCosts(
     nav2_costmap_2d::Costmap2D & master_grid,
@@ -131,10 +131,11 @@ Nav23dStaticLayer::updateCosts(
 {
   // 遍历observation 完成update
 }
-
+// 更新static map
 void
 Nav23dStaticLayer::matchSize()
 {
+  // 从observations获取到地图信息（occupancy grid）更新static layer信息
 }
 
 }
