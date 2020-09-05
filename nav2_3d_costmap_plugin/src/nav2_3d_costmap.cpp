@@ -1,4 +1,5 @@
 #include "nav2_3d_costmap_plugin/nav2_3d_costmap.hpp"
+#include "nav2_3d_costmap_plugin/nav2_3d_buffer.hpp"
 
 #include "nav2_costmap_2d/costmap_layer.hpp"
 #include "nav2_costmap_2d/layer.hpp"
@@ -17,18 +18,42 @@ Nav23dStaticLayer::Nav23dStaticLayer()
 Nav23dStaticLayer::~Nav23dStaticLayer()
 {
 }
+void
+Nav23dStaticLayer::getParameters()
+{
+    declareParameter("", rclcpp::ParameterValue());
+//   ??? no lock function in node_(lifecyclenode) ???
+// user node_ as replacement
+    auto node = node_.lock();
+    std::string topics_string;
+    node ->get_parameter(name_ + "." + "observation_sources", topics_string);
+    rolling_window_ = layered_costmap_->isRolling();
+
+    default_value_ = NO_INFORMATION;
+    global_frame_ = layered_costmap_->getGlobalFrameID();
+
+    std::stringstream ss(topics_string);
+    std::string source;
+    while (ss >> source)
+    {
+        std::string topic;
+        declareParameter(source + "." + "topic",rclcpp::ParameterValue(source));
+        node_->get_parameter(name_ + "." + source + "." + "topic", topic);
+    }
+
+}
 // read parameters in initialize func
 void
 Nav23dStaticLayer::onInitialize()
 {
     // get parameters
-    getParameters()
+    getParameters();
     // set QoS
 
     // create an observation buffer
     observation_buffers_.push_back(
-      std::shared_ptr<ObservationBuffer>(
-        new ObservationBuffer(
+      std::shared_ptr<>(
+        new  (
           node_, topic, observation_keep_time, expected_update_rate,
           min_obstacle_height,
           max_obstacle_height, obstacle_range, raytrace_range, *tf_, global_frame_,
@@ -45,7 +70,7 @@ Nav23dStaticLayer::onInitialize()
     }   
      
     // instance new buffer
-    observation_buffers_.push_back(new nav23dBuffer)
+    observation_buffers_.push_back(new buffer::nav23dBuffer)
     // subscribe data 
     // 传入数据：command line node; topic, qos
     std::shared_ptr<message_filters::Subscriber<sensor_msgs::msg::PointCloud2>> sub(
@@ -63,6 +88,8 @@ Nav23dStaticLayer::onInitialize()
     _observation_notifiers.push_back(filter);
 
 }
+
+
 
 /*****************************************************************************/
 void Nav23dStaticLayer::PointCloud2Callback(
