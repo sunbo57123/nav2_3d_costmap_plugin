@@ -19,13 +19,12 @@ namespace buffer
 {
     nav23dBuffer::nav23dBuffer(
         tf2_ros::Buffer & tf2_buffer,
-        std::shared_ptr<rclcpp_lifecycle::LifecycleNode> nh,
+        std::shared_ptr<rclcpp::Node> nh,
         double observation_keep_time,
         double expected_update_rate,
         std::string global_frame,
         std::string topic_name,
         std::list<nav2_costmap_2d::Observation> observation_list,
-        std::recursive_mutex lock,
         double min_obstacle_height,
         double max_obstacle_height,
         double obstacle_range,
@@ -53,7 +52,7 @@ namespace buffer
 
     void nav23dBuffer::bufferCloud(const sensor_msgs::msg::PointCloud2 & cloud)
     {
-        // use nav2 default observation, pc2 reading is supported
+        // use nav2 default observation, pc2 reading is suppo  rted
         observation_list_.push_front(nav2_costmap_2d::Observation());
 
         // const std::string origin_frame =_sensor_frame == "" ? cloud.header.frame_id : _sensor_frame;
@@ -82,10 +81,10 @@ namespace buffer
             sor.setLeafSize(0.01f, 0.01f, 0.01f);
 //            sor.setLeafSize(v_s, v_s, v_s);
 
-            sor.setMinimumPointsNumberPerVoxel(static_cast<unsigned int>(voxel_min_points_));
+//            sor.setMinimumPointsNumberPerVoxel(static_cast<unsigned int>(voxel_min_points_));
             sor.filter(*cloud_filtered);
             pcl_conversions::fromPCL(*cloud_filtered, *cld_global);
-            observation_list_.front()._cloud.reset(global_frame_cloud.release());
+//            observation_list_.front()._cloud.reset(global_frame_cloud.release());
 
         }
         catch (tf2::TransformException & ex)
@@ -94,7 +93,7 @@ namespace buffer
             return;
         }
         last_updated_ = nh_->now();
-        purgeStaleObservations();
+//        purgeStaleObservations();
     }
 //    // same with obstacle; need to be changed
 //    void nav23dBuffer::purgeStaleObservations()
@@ -120,7 +119,7 @@ namespace buffer
 //    }
 }
 
-    
 
 
-}
+
+
