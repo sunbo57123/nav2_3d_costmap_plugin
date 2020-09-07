@@ -19,7 +19,7 @@ namespace buffer
 {
     nav23dBuffer::nav23dBuffer(
         tf2_ros::Buffer & tf2_buffer,
-        std::shared_ptr<rclcpp::Node> nh,
+        std::shared_ptr<rclcpp_lifecycle::LifecycleNode> nh,
         double observation_keep_time,
         double expected_update_rate,
         std::string global_frame,

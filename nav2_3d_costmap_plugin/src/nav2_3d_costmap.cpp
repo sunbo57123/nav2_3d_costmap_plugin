@@ -1,6 +1,4 @@
 #include "nav2_3d_costmap_plugin/nav2_3d_costmap.hpp"
-#include "nav2_3d_costmap_plugin/nav2_3d_buffer.hpp"
-
 
 #include "nav2_costmap_2d/costmap_layer.hpp"
 #include "nav2_costmap_2d/layer.hpp"
@@ -124,11 +122,11 @@ Nav23dStaticLayer::reset()
 {
 }
 // 更新bounds
-//void
-//Nav23dStaticLayer::updateBounds(
-//    double robot_x, double robot_y, double robot_yaw, double * min_x,
-//    double * min_y, double * max_x, double * max_y)
-//{
+void
+Nav23dStaticLayer::updateBounds(
+    double robot_x, double robot_y, double robot_yaw, double * min_x,
+    double * min_y, double * max_x, double * max_y)
+{
 //    // 初始化中对observation进行了定义
 //    // 此处读取 observation接收到的点云信息
 //    bool current = true;
@@ -146,7 +144,7 @@ Nav23dStaticLayer::reset()
 //    // 遍历observation 完成update
 //
 //
-//}
+}
 // 更新bounds内的cost
 void
 Nav23dStaticLayer::updateCosts(

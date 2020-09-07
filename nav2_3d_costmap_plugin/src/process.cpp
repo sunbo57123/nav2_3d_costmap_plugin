@@ -32,12 +32,12 @@ void PointCloud2Callback(
 int main(int argc, char ** argv)
 {
 //    parameters pass to buffer
-//    rclcpp_lifecycle::LifecycleNode::WeakPtr node_;
-//    std::shared_ptr<rclcpp_lifecycle::LifecycleNode> node = node_.lock();
+    rclcpp_lifecycle::LifecycleNode::WeakPtr node_;
+    std::shared_ptr<rclcpp_lifecycle::LifecycleNode> node = node_.lock();
     rclcpp::init(argc, argv);
 
 //    std::shared_ptr<rclcpp::Node> node = std::make_shared<rclcpp::Node>("_", options);
-    rclcpp::Node::SharedPtr node = rclcpp::Node::make_shared("nodesub");
+//    rclcpp::Node::SharedPtr node = rclcpp::Node::make_shared("nodesub");
     tf2_ros::Buffer * tf2_;
     std::string global_frame = "map";
     std::string topic_name = "pc2test";
@@ -55,7 +55,7 @@ int main(int argc, char ** argv)
 
 // create nav2 3d buffer
     std::vector<std::shared_ptr<buffer::nav23dBuffer>> buffers_;
-    rclcpp::Node::SharedPtr rclcpp_node_;
+//    rclcpp_lifecycle::LifecycleNode::SharedPtr rclcpp_node_;
     buffers_.push_back(
             std::shared_ptr<buffer::nav23dBuffer>(
                     new buffer::nav23dBuffer(
