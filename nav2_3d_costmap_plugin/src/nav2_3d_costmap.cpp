@@ -17,11 +17,94 @@ Nav23dStaticLayer::Nav23dStaticLayer()
 Nav23dStaticLayer::~Nav23dStaticLayer()
 {
 }
-// read parameters
+void
+Nav23dStaticLayer::getParameters()
+{
+    declareParameter("", rclcpp::ParameterValue());
+
+// user node_ as replacement
+    auto node = node_.lock();
+    std::string topics_string;
+    node ->get_parameter(name_ + "." + "observation_sources", topics_string);
+    rolling_window_ = layered_costmap_->isRolling();
+
+    default_value_ = NO_INFORMATION;
+    global_frame_ = layered_costmap_->getGlobalFrameID();
+
+    std::stringstream ss(topics_string);
+    std::string source;
+    while (ss >> source)
+    {
+        std::string topic;
+        declareParameter(source + "." + "topic",rclcpp::ParameterValue(source));
+        node->get_parameter(name_ + "." + source + "." + "topic", topic);
+    }
+
+}
+// read parameters in initialize func
 void
 Nav23dStaticLayer::onInitialize()
 {
 
+//    getParameters();
+//    parameters pass to buffer
+
+    rclcpp_lifecycle::LifecycleNode::WeakPtr node_;
+    std::shared_ptr<rclcpp_lifecycle::LifecycleNode> node = node_.lock();
+    tf2_ros::Buffer * tf2_;
+// TODO: these parameters are set for test, would be removed.
+    std::string global_frame;
+    std::string topic_name = "pc2test";
+    std::list<nav2_costmap_2d::Observation> observation_list;
+    double observation_keep_time = 10;
+    double expected_update_rate = 1;
+    double min_obstacle_height = 0;
+    double max_obstacle_height = 0;
+    double obstacle_range = 0;
+    double tf_tolerance = 0;
+    // set QoS
+    rmw_qos_profile_t custom_qos_profile = rmw_qos_profile_sensor_data;
+    custom_qos_profile.depth = 50;
+    observation_buffers_.push_back(
+      std::shared_ptr<buffer::nav23dBuffer>(
+        new buffer::nav23dBuffer(
+                *tf2_,
+                node,
+                observation_keep_time,
+                expected_update_rate,
+                global_frame,
+                topic_name,
+                observation_list,
+                min_obstacle_height,
+                max_obstacle_height,
+                obstacle_range,
+                tf_tolerance
+          )));
+
+
+
+    std::shared_ptr<message_filters::Subscriber<sensor_msgs::msg::PointCloud2>> sub(
+        new message_filters::Subscriber<sensor_msgs::msg::PointCloud2>(rclcpp_node_, topic_name, custom_qos_profile));
+
+    std::shared_ptr<tf2_ros::MessageFilter<sensor_msgs::msg::PointCloud2>> filter(
+        new tf2_ros::MessageFilter<sensor_msgs::msg::PointCloud2>(*sub, *tf_, global_frame, 50, rclcpp_node_));
+
+    filter->registerCallback(
+        std::bind(&Nav23dStaticLayer::PointCloud2Callback, this, std::placeholders::_1, observation_buffers_.back()));
+
+}
+
+void Nav23dStaticLayer::updateCostMap()
+{
+}
+
+void Nav23dStaticLayer::PointCloud2Callback(
+  sensor_msgs::msg::PointCloud2::ConstSharedPtr message,
+  const std::shared_ptr<buffer::nav23dBuffer> & buffer)
+{
+  buffer->lock();
+  buffer->bufferCloud(*message);
+  buffer->unlock();
 }
 
 void
@@ -44,20 +127,26 @@ Nav23dStaticLayer::updateBounds(
     double robot_x, double robot_y, double robot_yaw, double * min_x,
     double * min_y, double * max_x, double * max_y)
 {
+
 }
+
 void
 Nav23dStaticLayer::updateCosts(
     nav2_costmap_2d::Costmap2D & master_grid,
     int min_i, int min_j, int max_i, int max_j)
 {
+
 }
 
 void
 Nav23dStaticLayer::matchSize()
 {
+
 }
 
 }
+
+
 
 #include "pluginlib/class_list_macros.hpp"
 PLUGINLIB_EXPORT_CLASS(nav2_3d_costmap_plugin::Nav23dStaticLayer, nav2_costmap_2d::CostmapLayer)
