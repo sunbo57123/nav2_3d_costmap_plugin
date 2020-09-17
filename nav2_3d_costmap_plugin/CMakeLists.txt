@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 project(nav2_3d_costmap_plugin)
 
 #set
-list(APPEND CMAKE_MODULE_PATH "/home/sun/openvdb/cmake")
+list(APPEND CMAKE_MODULE_PATH "/the/path/to/openvdb/cmake")
 set(lib_name ${PROJECT_NAME}_core)
 set(FastRTPS_INCLUDE_DIR /opt/ros/foxy/include)
 set(FastRTPS_LIBRARY_RELEASE /opt/ros/foxy/lib/libfastrtps.so)
