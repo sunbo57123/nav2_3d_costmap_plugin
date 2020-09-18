@@ -21,9 +21,7 @@ namespace nav2_3d_costmap_plugin
 class Nav23dStaticLayer : public nav2_costmap_2d::ObstacleLayer
     {
         public:
-            Nav23dStaticLayer(
-                    nav2_costmap_2d::CostmapLayer map_2d
-                    );
+            Nav23dStaticLayer();
             virtual ~Nav23dStaticLayer();
 
             virtual void onInitialize();
@@ -51,7 +49,8 @@ class Nav23dStaticLayer : public nav2_costmap_2d::ObstacleLayer
             std::string global_frame_;
             std::string topic_name_;
 //            nav2_voxel_grid::VoxelGrid map_3d_;
-            std::shared_ptr<nav2_costmap_2d::Costmap2D> map_2d_;
+//            std::shared_ptr<nav2_costmap_2d::Costmap2D> map_2d_;
+            nav2_costmap_2d::Costmap2D map_2d_;
             int mark_threshold_;
             std::vector<std::shared_ptr<message_filters::SubscriberBase>> observation_subscribers_;
             std::vector<std::shared_ptr<tf2_ros::MessageFilterBase>> observation_notifiers_;

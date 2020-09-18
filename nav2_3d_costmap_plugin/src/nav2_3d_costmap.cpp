@@ -11,9 +11,9 @@ using nav2_costmap_2d::FREE_SPACE;
 
 namespace nav2_3d_costmap_plugin
 {
-    Nav23dStaticLayer::Nav23dStaticLayer(
-            std::make_shared<nav2_costmap_2d::CostmapLayer>() map_2d
-            ):map_2d_(map_2d) {}
+    Nav23dStaticLayer::Nav23dStaticLayer(){
+        map_2d_ = nav2_costmap_2d::Costmap2D();
+    }
 
 Nav23dStaticLayer::~Nav23dStaticLayer(){}
 
