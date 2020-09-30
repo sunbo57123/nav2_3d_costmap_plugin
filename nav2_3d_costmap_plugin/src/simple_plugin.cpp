@@ -78,7 +78,7 @@ namespace simple_plugin
         pcl::PCLPointCloud2::Ptr cloud_file (new pcl::PCLPointCloud2 ());
         pcl::PCDReader reader;
         reader.read(
-                "/home/sun/navigation2/src/navigation2/simple_bringup/origin.pcd",
+                "filepath/origin.pcd",
                 * cloud_file
         );
         std::shared_ptr<sensor_msgs::msg::PointCloud2> cloud_pc2(new sensor_msgs::msg::PointCloud2());
@@ -107,8 +107,8 @@ namespace simple_plugin
 
         map_2d_ = nav2_costmap_2d::Costmap2D(map_size_x, map_size_y, resolution, 0, 0);
         convertTo2D(*pointcloud);
-        map_2d_.saveMap("/home/sun/navigation2/src/navigation2/simple_bringup/map_2d.pmg");
-        if (master->saveMap("/home/sun/navigation2/src/navigation2/simple_bringup/humuhumunukunukuapuaa.pmg")){
+        map_2d_.saveMap("filepath/map_2d.pmg");
+        if (master->saveMap("filepath/humuhumunukunukuapuaa.pmg")){
             RCLCPP_INFO(
                     logger_,
                     "humuhumunukunukuapuaa saved "
