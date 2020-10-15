@@ -1,14 +1,30 @@
-# nav2_3d_costmap_plugin
-[WIP]
+# nav2_3d_static_layer
 
-## ROAD MAP
+`nav2_3d_static_layer` is a costmap_2d plugin, which is designed for add the information of pointcloud2 messages to costmap. 
 
-- [x] basic costmap structure
-- [x] have pointcloud2 related functions: filter, storage
-- [ ] convert pointcloud message into 2d occupancy grid
-- [ ] update costmap
-- [ ] complete test cases 
+The plugin will receive pointcloud2 messages from map server, and convert it into 2D costmap, the convertion process is realized in octmap, and the pc2 information is filtered through voxelgrid in PCL.
 
-## Problems and Reminder
-- PCL configuration in CMAKE is using fake path now, changes needed
-- 3D to 2D convertion result is not correct, fix needed.
+### OnInitialize Part
+
+In this stage, the 3D map server is developing in process, so the observation part is replaced through reading PCD file information. Reading file part would be deleted after observation part tested well.
+
+### PC2 Information Handling
+
+The PC2 message will be filtered through voxelgrid in PCL, the result is:
+
+![filtered_pc](./doc/filtered_pc.png)
+
+And then use octotree convert it into 2D costmap, 
+
+![costmap_2d](/Users/bosun/Desktop/gitproj/doc/costmap_2d.png)
+
+### Bringup Result
+
+Run `ros2 launch nav2_bringup tb3_simulation_launch.py `
+
+For better effect, the basic map is changed into a picture with the pointcloud message information. This plugin is added in global map, with inflation layer. The result in rviz is :
+
+![result](/Users/bosun/Desktop/gitproj/doc/rviz_result.png)
+
+
+
