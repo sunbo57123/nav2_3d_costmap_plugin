@@ -72,7 +72,7 @@ namespace nav2_3d_static_layer
     void
     Nav23dStaticLayer::readPC(std::shared_ptr<sensor_msgs::msg::PointCloud2> cloud_pc2)
     {
-        std::string file_path = "/home/sun/navigation2/src/navigation2/simple_bringup/origin.pcd";
+        std::string file_path = "pcdfilepath/origin.pcd";
         pcl::PCLPointCloud2::Ptr cloud_file (new pcl::PCLPointCloud2 ());
         pcl::PCDReader reader;
         reader.read(

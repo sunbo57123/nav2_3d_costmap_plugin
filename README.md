@@ -16,7 +16,7 @@ The PC2 message will be filtered through voxelgrid in PCL, the result is:
 
 And then use octotree convert it into 2D costmap, 
 
-![costmap_2d](/Users/bosun/Desktop/gitproj/doc/costmap_2d.png)
+![costmap_2d](./doc/costmap_2d.png)
 
 ### Bringup Result
 
@@ -24,7 +24,7 @@ Run `ros2 launch nav2_bringup tb3_simulation_launch.py `
 
 For better effect, the basic map is changed into a picture with the pointcloud message information. This plugin is added in global map, with inflation layer. The result in rviz is :
 
-![result](/Users/bosun/Desktop/gitproj/doc/rviz_result.png)
+![result](./doc/rviz_result.png)
 
 
 
