@@ -22,6 +22,7 @@ namespace nav2_3d_static_layer
     Nav23dStaticLayer::Nav23dStaticLayer() {
         map_2d_ = nav2_costmap_2d::Costmap2D();
     }
+// TODO What 'noexcept' means in CPP?
     Nav23dStaticLayer::~Nav23dStaticLayer() noexcept {}
 
     void
@@ -107,6 +108,8 @@ namespace nav2_3d_static_layer
                 );
 
         convertTo2d(*pointcloud);
+        // TODO fillCostMapFromPointCloud(*pointcloud)
+
     }
 
     void
@@ -133,24 +136,32 @@ namespace nav2_3d_static_layer
             octotree.updateNode(octomap::point3d(p.x, p.y, p.z), true);
         }
         octotree.updateInnerOccupancy();
-
-        for(octomap::OcTree::iterator it = octotree.begin(); it != octotree.end(); ++it){
+        for(octomap::OcTree::iterator it = octotree.begin(), end=octotree.end();
+        it != end; ++it){
             if(octotree.isNodeOccupied(*it))
             {
                 auto coord = it.getCoordinate();
                 /*
                  *
                  */
-                int point_x = (int)coord.x() - (origin_x_-0.5)/resolution_;
-                int point_y = - (origin_x_-0.5)/resolution_ - (int)coord.y();
-                int point_z = (int)coord.z();
+                // TODO CPP recommends static_cast<int>
+                // TODO Be aware of the implicit accuracy loss
+                // TODO Make it clear why the forum is like this:
+                // Ref: https://github.com/ros-planning/navigation2/blob/main/nav2_costmap_2d/src/costmap_2d.cpp#L264
+                int point_x = (int) (coord.x() - (origin_x_ - 0.5) / resolution_);
+                int point_y = (int) (-(origin_y_ - 0.5) / resolution_ - coord.y());
+                int point_z = (int) coord.z();
 
+                // TODO What does the implicit conversion means?
                 unsigned int x = point_x;
                 unsigned int y = point_y;
+                // TODO More conditions to validate the result?
                 if (x > map_size_x_ || y > map_size_y_ ){
+                    // TODO If the map is invalid, make a warning or error
+                    // then break
                     RCLCPP_INFO(
                             logger_,
-                            "<<<<humuhumunukunukuapuaa>>>>over: x: %lf,y: %lf",
+                            "<<<<humuhumunukunukuapuaa  the world map coord transformation>>>>over: x: %lf,y: %lf",
                             x,y
                     );
                     break;
@@ -167,8 +178,8 @@ namespace nav2_3d_static_layer
     }
     void
     Nav23dStaticLayer::updateBounds(
-            double robot_x, double robot_y, double /*robot_yaw*/, double * min_x,
-            double * min_y, double * max_x, double * max_y) {
+            double robot_x, double robot_y, double /*robot_yaw*/,
+            double * min_x, double * min_y, double * max_x, double * max_y) {
         RCLCPP_INFO(
                 logger_,
                 ">>>>>>>>>>>>>>>>>>>>>>>>>>>updateBounds"
@@ -205,7 +216,7 @@ namespace nav2_3d_static_layer
                 min_i, min_j, max_i, max_j
         );
 
-
+        // TODO Only update the cost within the bounds
         for (unsigned int i = 0; i <map_size_x_; ++i){
             for (unsigned int j = 0; j <map_size_y_; ++j){
                 master_grid.setCost(i, j, map_2d_.getCost(i, j));
