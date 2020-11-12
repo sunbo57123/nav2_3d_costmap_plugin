@@ -36,5 +36,15 @@ install(TARGETS ${lib_name}
 pluginlib_export_plugin_description_file(nav2_costmap_2d nav2_3d_static_layer.xml)
 target_link_libraries(${lib_name} ${PCL_LIBRARIES} ${OCTOMAP_LIBRARIES})
 ament_target_dependencies(${lib_name} ${dep_pkgs})
+if(BUILD_TESTING)
+    find_package(ament_lint_auto REQUIRED)
+    # the following line skips the linter which checks for copyrights
+    set(ament_cmake_copyright_FOUND TRUE)
+    set(ament_cmake_cpplint_FOUND TRUE)
+    ament_lint_auto_find_test_dependencies()
+
+    find_package(ament_cmake_gtest REQUIRED)
+    add_subdirectory(test)
+endif()
 
 ament_package()

@@ -1,0 +1,32 @@
+[0.023s] Invoking command in '/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sun/turtlebot3_ws/install/turtlebot3_teleop:/home/sun/turtlebot3_ws/install/turtlebot3_example:/home/sun/navigation2/src/install/opencv_tests:/home/sun/navigation2/src/install/nav2_gazebo_spawner:/opt/ros/foxy /usr/bin/cmake --build /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer -- -j6 -l6
+[0.089s] [35m[1mScanning dependencies of target nav2_3d_static_layer_core[0m
+[0.098s] [ 50%] Built target gtest_main
+[0.098s] [ 50%] Built target gtest
+[0.161s] [ 62%] [32mBuilding CXX object CMakeFiles/nav2_3d_static_layer_core.dir/src/nav2_3d_static_layer.cpp.o[0m
+[11.331s] [ 75%] [32m[1mLinking CXX shared library libnav2_3d_static_layer_core.so[0m
+[13.137s] [ 75%] Built target nav2_3d_static_layer_core
+[13.199s] [ 87%] [32m[1mLinking CXX executable static3d_tests_exec[0m
+[14.612s] [100%] Built target static3d_tests_exec
+[14.628s] Invoked command in '/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sun/turtlebot3_ws/install/turtlebot3_teleop:/home/sun/turtlebot3_ws/install/turtlebot3_example:/home/sun/navigation2/src/install/opencv_tests:/home/sun/navigation2/src/install/nav2_gazebo_spawner:/opt/ros/foxy /usr/bin/cmake --build /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer -- -j6 -l6
+[14.688s] Invoking command in '/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sun/turtlebot3_ws/install/turtlebot3_teleop:/home/sun/turtlebot3_ws/install/turtlebot3_example:/home/sun/navigation2/src/install/opencv_tests:/home/sun/navigation2/src/install/nav2_gazebo_spawner:/opt/ros/foxy /usr/bin/cmake --install /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer
+[14.699s] -- Install configuration: ""
+[14.700s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/lib/libnav2_3d_static_layer_core.so
+[14.704s] -- Set runtime path of "/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/lib/libnav2_3d_static_layer_core.so" to ""
+[14.704s] -- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/nav2_3d_static_layer.xml
+[14.704s] -- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/ament_index/resource_index/package_run_dependencies/nav2_3d_static_layer
+[14.705s] -- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/ament_index/resource_index/parent_prefix_path/nav2_3d_static_layer
+[14.705s] -- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/environment/ament_prefix_path.sh
+[14.705s] -- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/environment/ament_prefix_path.dsv
+[14.705s] -- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/environment/path.sh
+[14.705s] -- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/environment/path.dsv
+[14.705s] -- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/local_setup.bash
+[14.705s] -- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/local_setup.sh
+[14.705s] -- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/local_setup.zsh
+[14.706s] -- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/local_setup.dsv
+[14.706s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/package.dsv
+[14.706s] -- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/ament_index/resource_index/packages/nav2_3d_static_layer
+[14.706s] -- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/ament_index/resource_index/nav2_costmap_2d__pluginlib__plugin/nav2_3d_static_layer
+[14.706s] -- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/cmake/nav2_3d_static_layerConfig.cmake
+[14.706s] -- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/cmake/nav2_3d_static_layerConfig-version.cmake
+[14.707s] -- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/package.xml
+[14.708s] Invoked command in '/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sun/turtlebot3_ws/install/turtlebot3_teleop:/home/sun/turtlebot3_ws/install/turtlebot3_example:/home/sun/navigation2/src/install/opencv_tests:/home/sun/navigation2/src/install/nav2_gazebo_spawner:/opt/ros/foxy /usr/bin/cmake --install /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer

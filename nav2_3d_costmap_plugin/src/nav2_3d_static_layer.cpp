@@ -19,27 +19,27 @@ using nav2_costmap_2d::FREE_SPACE;
 
 namespace nav2_3d_static_layer
 {
-    Nav23dStaticLayer::Nav23dStaticLayer() {
+    StaticLayer3D::StaticLayer3D() {
         map_2d_ = nav2_costmap_2d::Costmap2D();
     }
 // TODO What 'noexcept' means in CPP?
-    Nav23dStaticLayer::~Nav23dStaticLayer() noexcept {}
+    StaticLayer3D::~StaticLayer3D() noexcept {}
 
     void
-    Nav23dStaticLayer::onInitialize()
+    StaticLayer3D::onInitialize()
     {
-        nav2_costmap_2d::ObstacleLayer::onInitialize();
         RCLCPP_INFO(
                 logger_,
                 "humuhumunukunukuapuaa is loading 3d static map"
         );
         declareParameter("enabled", rclcpp::ParameterValue(true));
-        declareParameter("topic_name", rclcpp::ParameterValue("pc2_map"));
+        declareParameter("topic_name", rclcpp::ParameterValue("pc2_info"));
         declareParameter("lethal_threshold", rclcpp::ParameterValue(0.5));
-        declareParameter("map_resolution", rclcpp::ParameterValue(0.05));
         declareParameter("voxel_leafsize", rclcpp::ParameterValue(0.2));
         declareParameter("min_z_height", rclcpp::ParameterValue(0.0));
         declareParameter("max_z_height", rclcpp::ParameterValue(3.0));
+
+        std::lock_guard<Costmap2D::mutex_t> guard(*getMutex());
 
         auto node = node_.lock();
         if (!node) {
@@ -49,10 +49,14 @@ namespace nav2_3d_static_layer
         node ->get_parameter(name_ + "." + "enabled", enabled_);
         node ->get_parameter(name_ + "." + "topic_name", topic_name_);
         node ->get_parameter(name_ + "." + "lethal_threshold", lethal_threshold_);
-        node ->get_parameter(name_ + "." + "map_resolution", map_resolution_);
         node ->get_parameter(name_ + "." + "voxel_leafsize", voxel_leafsize_);
         node ->get_parameter(name_ + "." + "min_z_height", min_z_height_);
         node ->get_parameter(name_ + "." + "max_z_height", max_z_height_);
+
+        RCLCPP_INFO(
+                logger_,
+                "subcribing to: %s ",topic_name_.c_str()
+        );
 
         rolling_window_ = layered_costmap_->isRolling();
         default_value_ = NO_INFORMATION;
@@ -67,28 +71,32 @@ namespace nav2_3d_static_layer
          * read PC:
          * reading from pcd file and covert it into pc2 as the replacement of map server.
          */
-        readPC(cloud_pc2);
-        cloudCallback(cloud_pc2);
-    }
-    void
-    Nav23dStaticLayer::readPC(std::shared_ptr<sensor_msgs::msg::PointCloud2> cloud_pc2)
-    {
-        std::string file_path = "pcdfilepath/origin.pcd";
-        pcl::PCLPointCloud2::Ptr cloud_file (new pcl::PCLPointCloud2 ());
-        pcl::PCDReader reader;
-        reader.read(
-                file_path,
-                * cloud_file
-        );
-        pcl_conversions::fromPCL(*cloud_file, *cloud_pc2);
+//        readPC(cloud_pc2);
+        _subscription = node->create_subscription<sensor_msgs::msg::PointCloud2>(
+                topic_name_, map_qos,
+                std::bind(&StaticLayer3D::cloudCallback, this, std::placeholders::_1));
+//        cloudCallback(cloud_pc2);
     }
 
     void
-    Nav23dStaticLayer::cloudCallback(sensor_msgs::msg::PointCloud2::ConstSharedPtr pointcloud)
+    StaticLayer3D::cloudCallback(sensor_msgs::msg::PointCloud2::ConstSharedPtr pointcloud)
     {
         /*
          *TODO: add observation part
          */
+        std::lock_guard<Costmap2D::mutex_t> guard(*getMutex());
+        RCLCPP_INFO(
+                logger_,
+                "here"
+        );
+        if(!pointcloud)
+        {
+            RCLCPP_INFO(
+                    logger_,
+                    "no pointcloud2"
+                    );
+        }
+
         Costmap2D * master = layered_costmap_->getCostmap();
         resolution_ = master->getResolution();
         map_size_x_ = master->getSizeInMetersX()/resolution_;
@@ -113,7 +121,7 @@ namespace nav2_3d_static_layer
     }
 
     void
-    Nav23dStaticLayer::convertTo2d(sensor_msgs::msg::PointCloud2 cloud)
+    StaticLayer3D::convertTo2d(sensor_msgs::msg::PointCloud2 cloud)
     {
         pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_xyz(new pcl::PointCloud<pcl::PointXYZ>);
         pcl::PCLPointCloud2::Ptr cloud_pcl(new pcl::PCLPointCloud2);
@@ -177,7 +185,7 @@ namespace nav2_3d_static_layer
         }
     }
     void
-    Nav23dStaticLayer::updateBounds(
+    StaticLayer3D::updateBounds(
             double robot_x, double robot_y, double /*robot_yaw*/,
             double * min_x, double * min_y, double * max_x, double * max_y) {
         RCLCPP_INFO(
@@ -202,7 +210,7 @@ namespace nav2_3d_static_layer
     }
 
     void
-    Nav23dStaticLayer::updateCosts(
+    StaticLayer3D::updateCosts(
             nav2_costmap_2d::Costmap2D & master_grid,
             int min_i, int min_j, int max_i, int max_j)
     {
@@ -223,6 +231,25 @@ namespace nav2_3d_static_layer
             }
         }
     }
+
+    void
+    StaticLayer3D::activate() {
+
+
+    }
+    void
+    StaticLayer3D::deactivate() {
+
+
+    }
+    void
+    StaticLayer3D::reset() {
+
+
+    }
+
 }
+
+
 #include "pluginlib/class_list_macros.hpp"
-PLUGINLIB_EXPORT_CLASS(nav2_3d_static_layer::Nav23dStaticLayer, nav2_costmap_2d::Layer)
+PLUGINLIB_EXPORT_CLASS(nav2_3d_static_layer::StaticLayer3D, nav2_costmap_2d::Layer)

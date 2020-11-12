@@ -1,0 +1,199 @@
+[0.019s] Invoking command in '/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sun/turtlebot3_ws/install/turtlebot3_teleop:/home/sun/turtlebot3_ws/install/turtlebot3_example:/home/sun/navigation2/src/install/opencv_tests:/home/sun/navigation2/src/install/nav2_gazebo_spawner:/opt/ros/foxy /usr/bin/cmake /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/nav2_3d_costmap_plugin -DCMAKE_INSTALL_PREFIX=/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer
+[0.084s] -- The C compiler identification is GNU 9.3.0
+[0.154s] -- The CXX compiler identification is GNU 9.3.0
+[0.161s] -- Check for working C compiler: /usr/bin/cc
+[0.242s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.243s] -- Detecting C compiler ABI info
+[0.325s] -- Detecting C compiler ABI info - done
+[0.336s] -- Detecting C compile features
+[0.337s] -- Detecting C compile features - done
+[0.339s] -- Check for working CXX compiler: /usr/bin/c++
+[0.418s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.419s] -- Detecting CXX compiler ABI info
+[0.518s] -- Detecting CXX compiler ABI info - done
+[0.531s] -- Detecting CXX compile features
+[0.531s] -- Detecting CXX compile features - done
+[0.537s] -- Found ament_cmake: 0.9.6 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.576s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.5", minimum required is "3") 
+[0.576s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.795s] -- Found rclcpp: 2.1.0 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.859s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.875s] -- Found rosidl_adapter: 1.1.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.987s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[1.016s] -- Found FastRTPS: /opt/ros/foxy/include  
+[1.118s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.189s] -- Found rmw_implementation_cmake: 1.0.1 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[1.193s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.194s] -- Looking for pthread.h
+[1.272s] -- Looking for pthread.h - found
+[1.272s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.353s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[1.354s] -- Looking for pthread_create in pthreads
+[1.431s] -- Looking for pthread_create in pthreads - not found
+[1.431s] -- Looking for pthread_create in pthread
+[1.512s] -- Looking for pthread_create in pthread - found
+[1.513s] -- Found Threads: TRUE  
+[1.672s] -- Found nav2_costmap_2d: 0.4.3 (/home/sun/navigation2/src/install/nav2_costmap_2d/share/nav2_costmap_2d/cmake)
+[2.663s] -- Found Eigen3: TRUE (found version "3.3.7") 
+[3.289s] -- Found pcl_conversions: 2.2.0 (/opt/ros/foxy/share/pcl_conversions/cmake)
+[3.451s] -- Checking for module 'eigen3'
+[3.471s] --   Found eigen3, version 3.3.7
+[3.514s] -- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+[3.514s] -- Eigen found (include: /usr/include/eigen3, version: 3.3.7)
+[3.640s] -- Found Boost: /usr/include (found suitable version "1.71.0", minimum required is "1.55.0") found components: system filesystem date_time iostreams serialization regex 
+[3.659s] -- Checking for module 'flann'
+[3.680s] --   Found flann, version 1.9.1
+[3.731s] -- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  
+[3.784s] -- The imported target "vtkParseOGLExt" references the file
+[3.784s]    "/usr/bin/vtkParseOGLExt-7.1"
+[3.784s] but this file does not exist.  Possible reasons include:
+[3.784s] * The file was deleted, renamed, or moved to another location.
+[3.784s] * An install or uninstall procedure did not complete successfully.
+[3.785s] * The installation package was faulty and contained
+[3.785s]    "/usr/lib/cmake/vtk-7.1/VTKTargets.cmake"
+[3.785s] but not all the files it references.
+[3.785s] 
+[3.786s] -- The imported target "vtkRenderingPythonTkWidgets" references the file
+[3.786s]    "/usr/lib/x86_64-linux-gnu/libvtkRenderingPythonTkWidgets.so"
+[3.786s] but this file does not exist.  Possible reasons include:
+[3.786s] * The file was deleted, renamed, or moved to another location.
+[3.786s] * An install or uninstall procedure did not complete successfully.
+[3.787s] * The installation package was faulty and contained
+[3.787s]    "/usr/lib/cmake/vtk-7.1/VTKTargets.cmake"
+[3.787s] but not all the files it references.
+[3.787s] 
+[3.787s] -- The imported target "vtk" references the file
+[3.787s]    "/usr/bin/vtk"
+[3.787s] but this file does not exist.  Possible reasons include:
+[3.788s] * The file was deleted, renamed, or moved to another location.
+[3.788s] * An install or uninstall procedure did not complete successfully.
+[3.788s] * The installation package was faulty and contained
+[3.788s]    "/usr/lib/cmake/vtk-7.1/VTKTargets.cmake"
+[3.788s] but not all the files it references.
+[3.789s] 
+[3.789s] -- The imported target "pvtk" references the file
+[3.789s]    "/usr/bin/pvtk"
+[3.789s] but this file does not exist.  Possible reasons include:
+[3.789s] * The file was deleted, renamed, or moved to another location.
+[3.789s] * An install or uninstall procedure did not complete successfully.
+[3.790s] * The installation package was faulty and contained
+[3.790s]    "/usr/lib/cmake/vtk-7.1/VTKTargets.cmake"
+[3.790s] but not all the files it references.
+[3.790s] 
+[3.806s] -- Checking for module 'libusb-1.0'
+[3.828s] --   Found libusb-1.0, version 1.0.23
+[3.880s] -- Found USB_10: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+[3.955s] -- Found OpenNI: /usr/lib/libOpenNI.so  
+[3.955s] -- OpenNI found (include: /usr/include/ni, lib: /usr/lib/libOpenNI.so)
+[4.036s] -- Found OpenNI2: /usr/lib/libOpenNI2.so  
+[4.036s] -- OpenNI2 found (include: /usr/include/openni2, lib: /usr/lib/libOpenNI2.so)
+[4.037s] ** WARNING ** io features related to pcap will be disabled
+[4.037s] ** WARNING ** io features related to png will be disabled
+[4.051s] ** WARNING ** io features related to libusb-1.0 will be disabled
+[4.051s] -- Found libusb-1.0: /usr/include  
+[4.058s] -- OpenNI found (include: /usr/include/ni, lib: /usr/lib/libOpenNI.so)
+[4.065s] -- OpenNI2 found (include: /usr/include/openni2, lib: /usr/lib/libOpenNI2.so)
+[4.104s] -- Found Qhull: optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so  
+[4.104s] -- QHULL found (include: /usr/include, lib: optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so)
+[4.104s] -- looking for PCL_COMMON
+[4.104s] -- Found PCL_COMMON: /usr/local/lib/libpcl_common.so  
+[4.105s] -- looking for PCL_KDTREE
+[4.105s] -- Found PCL_KDTREE: /usr/local/lib/libpcl_kdtree.so  
+[4.105s] -- looking for PCL_OCTREE
+[4.106s] -- Found PCL_OCTREE: /usr/local/lib/libpcl_octree.so  
+[4.106s] -- looking for PCL_SEARCH
+[4.106s] -- Found PCL_SEARCH: /usr/local/lib/libpcl_search.so  
+[4.107s] -- looking for PCL_SAMPLE_CONSENSUS
+[4.107s] -- Found PCL_SAMPLE_CONSENSUS: /usr/local/lib/libpcl_sample_consensus.so  
+[4.107s] -- looking for PCL_FILTERS
+[4.108s] -- Found PCL_FILTERS: /usr/local/lib/libpcl_filters.so  
+[4.108s] -- looking for PCL_2D
+[4.108s] -- Found PCL_2D: /usr/local/include/pcl-1.11  
+[4.109s] -- looking for PCL_GEOMETRY
+[4.109s] -- Found PCL_GEOMETRY: /usr/local/include/pcl-1.11  
+[4.109s] -- looking for PCL_IO
+[4.110s] -- Found PCL_IO: /usr/local/lib/libpcl_io.so  
+[4.110s] -- looking for PCL_FEATURES
+[4.110s] -- Found PCL_FEATURES: /usr/local/lib/libpcl_features.so  
+[4.111s] -- looking for PCL_ML
+[4.111s] -- Found PCL_ML: /usr/local/lib/libpcl_ml.so  
+[4.112s] -- looking for PCL_SEGMENTATION
+[4.112s] -- Found PCL_SEGMENTATION: /usr/local/lib/libpcl_segmentation.so  
+[4.112s] -- looking for PCL_VISUALIZATION
+[4.113s] -- Found PCL_VISUALIZATION: /usr/local/lib/libpcl_visualization.so  
+[4.113s] -- looking for PCL_SURFACE
+[4.114s] -- Found PCL_SURFACE: /usr/local/lib/libpcl_surface.so  
+[4.114s] -- looking for PCL_REGISTRATION
+[4.114s] -- Found PCL_REGISTRATION: /usr/local/lib/libpcl_registration.so  
+[4.115s] -- looking for PCL_KEYPOINTS
+[4.115s] -- Found PCL_KEYPOINTS: /usr/local/lib/libpcl_keypoints.so  
+[4.116s] -- looking for PCL_TRACKING
+[4.116s] -- Found PCL_TRACKING: /usr/local/lib/libpcl_tracking.so  
+[4.116s] -- looking for PCL_RECOGNITION
+[4.117s] -- Found PCL_RECOGNITION: /usr/local/lib/libpcl_recognition.so  
+[4.117s] -- looking for PCL_STEREO
+[4.118s] -- Found PCL_STEREO: /usr/local/lib/libpcl_stereo.so  
+[4.118s] -- looking for PCL_OUTOFCORE
+[4.118s] -- Found PCL_OUTOFCORE: /usr/local/lib/libpcl_outofcore.so  
+[4.119s] -- looking for PCL_PEOPLE
+[4.119s] -- Found PCL_PEOPLE: /usr/local/lib/libpcl_people.so  
+[4.120s] -- Found PCL: pcl_common;pcl_kdtree;pcl_octree;pcl_search;pcl_sample_consensus;pcl_filters;pcl_io;pcl_features;pcl_ml;pcl_segmentation;pcl_visualization;pcl_surface;pcl_registration;pcl_keypoints;pcl_tracking;pcl_recognition;pcl_stereo;pcl_outofcore;pcl_people;/usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;/usr/lib/x86_64-linux-gnu/libboost_serialization.so;/usr/lib/x86_64-linux-gnu/libboost_regex.so;optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so;/usr/lib/libOpenNI.so;/usr/lib/libOpenNI2.so;vtkChartsCore;vtkCommonColor;vtkCommonCore;vtksys;vtkCommonDataModel;vtkCommonMath;vtkCommonMisc;vtkCommonSystem;vtkCommonTransforms;vtkCommonExecutionModel;vtkFiltersGeneral;vtkCommonComputationalGeometry;vtkFiltersCore;vtkInfovisCore;vtkFiltersExtraction;vtkFiltersStatistics;vtkImagingFourier;vtkImagingCore;vtkalglib;vtkRenderingContext2D;vtkRenderingCore;vtkFiltersGeometry;vtkFiltersSources;vtkRenderingFreeType;/usr/lib/x86_64-linux-gnu/libfreetype.so;/usr/lib/x86_64-linux-gnu/libz.so;vtkFiltersModeling;vtkImagingSources;vtkInteractionStyle;vtkInteractionWidgets;vtkFiltersHybrid;vtkImagingColor;vtkImagingGeneral;vtkImagingHybrid;vtkIOImage;vtkDICOMParser;vtkmetaio;/usr/lib/x86_64-linux-gnu/libjpeg.so;/usr/lib/x86_64-linux-gnu/libpng.so;/usr/lib/x86_64-linux-gnu/libtiff.so;vtkRenderingAnnotation;vtkRenderingVolume;vtkIOXML;vtkIOCore;vtkIOXMLParser;/usr/lib/x86_64-linux-gnu/libexpat.so;vtkIOGeometry;vtkIOLegacy;vtkIOPLY;vtkRenderingLOD;vtkViewsContext2D;vtkViewsCore;vtkRenderingContextOpenGL2;vtkRenderingOpenGL2;FLANN::FLANN (Required is at least version "1.5") 
+[4.657s] -- Found ament_lint_auto: 0.9.5 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[4.753s] -- Found ament_cmake_gtest: 0.9.6 (/opt/ros/foxy/share/ament_cmake_gtest/cmake)
+[4.763s] -- Found gtest sources under '/opt/ros/foxy/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[4.765s] -- Check if compiler accepts -pthread
+[4.858s] -- Check if compiler accepts -pthread - yes
+[5.392s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[5.393s] -- Configured cppcheck include dirs: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/nav2_3d_costmap_plugin/include
+[5.393s] -- Configured cppcheck exclude dirs and/or files: 
+[5.395s] -- Added test 'flake8' to check Python code syntax and style conventions
+[5.398s] -- Added test 'lint_cmake' to check CMake code style
+[5.400s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[5.409s] -- Added test 'uncrustify' to check C / C++ code style
+[5.409s] -- Configured uncrustify additional arguments: 
+[5.411s] -- Added test 'xmllint' to check XML markup files
+[5.417s] -- Configuring done
+[5.569s] -- Generating done
+[5.572s] -- Build files have been written to: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer
+[5.586s] Invoked command in '/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sun/turtlebot3_ws/install/turtlebot3_teleop:/home/sun/turtlebot3_ws/install/turtlebot3_example:/home/sun/navigation2/src/install/opencv_tests:/home/sun/navigation2/src/install/nav2_gazebo_spawner:/opt/ros/foxy /usr/bin/cmake /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/nav2_3d_costmap_plugin -DCMAKE_INSTALL_PREFIX=/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer
+[5.590s] Invoking command in '/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sun/turtlebot3_ws/install/turtlebot3_teleop:/home/sun/turtlebot3_ws/install/turtlebot3_example:/home/sun/navigation2/src/install/opencv_tests:/home/sun/navigation2/src/install/nav2_gazebo_spawner:/opt/ros/foxy /usr/bin/cmake --build /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer -- -j6 -l6
+[5.644s] [35m[1mScanning dependencies of target gtest_main[0m
+[5.644s] [35m[1mScanning dependencies of target nav2_3d_static_layer_core[0m
+[5.644s] [35m[1mScanning dependencies of target gtest[0m
+[5.665s] [ 11%] [32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o[0m
+[5.668s] [ 22%] [32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o[0m
+[5.761s] [ 33%] [32mBuilding CXX object CMakeFiles/nav2_3d_static_layer_core.dir/src/nav2_3d_static_layer.cpp.o[0m
+[6.299s] [ 44%] [32m[1mLinking CXX static library libgtest_main.a[0m
+[6.345s] [ 44%] Built target gtest_main
+[8.434s] [ 55%] [32m[1mLinking CXX static library libgtest.a[0m
+[8.499s] [ 55%] Built target gtest
+[13.627s] [ 66%] [32m[1mLinking CXX shared library libnav2_3d_static_layer_core.so[0m
+[15.053s] [ 66%] Built target nav2_3d_static_layer_core
+[15.067s] [35m[1mScanning dependencies of target static3d_tests_exec[0m
+[15.157s] [ 88%] [32mBuilding CXX object test/integration/CMakeFiles/static3d_tests_exec.dir/temp_file.cpp.o[0m
+[15.157s] [ 88%] [32mBuilding CXX object test/integration/CMakeFiles/static3d_tests_exec.dir/static3d_tests.cpp.o[0m
+[18.912s] [100%] [32m[1mLinking CXX executable static3d_tests_exec[0m
+[19.617s] [100%] Built target static3d_tests_exec
+[19.632s] Invoked command in '/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sun/turtlebot3_ws/install/turtlebot3_teleop:/home/sun/turtlebot3_ws/install/turtlebot3_example:/home/sun/navigation2/src/install/opencv_tests:/home/sun/navigation2/src/install/nav2_gazebo_spawner:/opt/ros/foxy /usr/bin/cmake --build /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer -- -j6 -l6
+[19.685s] Invoking command in '/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sun/turtlebot3_ws/install/turtlebot3_teleop:/home/sun/turtlebot3_ws/install/turtlebot3_example:/home/sun/navigation2/src/install/opencv_tests:/home/sun/navigation2/src/install/nav2_gazebo_spawner:/opt/ros/foxy /usr/bin/cmake --install /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer
+[19.695s] -- Install configuration: ""
+[19.696s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/lib/libnav2_3d_static_layer_core.so
+[19.697s] -- Set runtime path of "/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/lib/libnav2_3d_static_layer_core.so" to ""
+[19.697s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/nav2_3d_static_layer.xml
+[19.699s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/ament_index/resource_index/package_run_dependencies/nav2_3d_static_layer
+[19.699s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/ament_index/resource_index/parent_prefix_path/nav2_3d_static_layer
+[19.699s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/environment/ament_prefix_path.sh
+[19.700s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/environment/ament_prefix_path.dsv
+[19.700s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/environment/path.sh
+[19.700s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/environment/path.dsv
+[19.700s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/local_setup.bash
+[19.700s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/local_setup.sh
+[19.700s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/local_setup.zsh
+[19.701s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/local_setup.dsv
+[19.701s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/package.dsv
+[19.701s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/ament_index/resource_index/packages/nav2_3d_static_layer
+[19.701s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/ament_index/resource_index/nav2_costmap_2d__pluginlib__plugin/nav2_3d_static_layer
+[19.701s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/cmake/nav2_3d_static_layerConfig.cmake
+[19.701s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/cmake/nav2_3d_static_layerConfig-version.cmake
+[19.701s] -- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/package.xml
+[19.704s] Invoked command in '/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sun/turtlebot3_ws/install/turtlebot3_teleop:/home/sun/turtlebot3_ws/install/turtlebot3_example:/home/sun/navigation2/src/install/opencv_tests:/home/sun/navigation2/src/install/nav2_gazebo_spawner:/opt/ros/foxy /usr/bin/cmake --install /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer

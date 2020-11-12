@@ -1,0 +1,29 @@
+[ 50%] Built target gtest_main
+[ 50%] Built target gtest
+[ 62%] [32mBuilding CXX object CMakeFiles/nav2_3d_static_layer_core.dir/src/nav2_3d_static_layer.cpp.o[0m
+[ 75%] [32m[1mLinking CXX shared library libnav2_3d_static_layer_core.so[0m
+[ 75%] Built target nav2_3d_static_layer_core
+[35m[1mScanning dependencies of target static3d_tests_exec[0m
+[ 87%] [32mBuilding CXX object test/integration/CMakeFiles/static3d_tests_exec.dir/static3d_tests.cpp.o[0m
+[100%] [32m[1mLinking CXX executable static3d_tests_exec[0m
+[100%] Built target static3d_tests_exec
+-- Install configuration: ""
+-- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/lib/libnav2_3d_static_layer_core.so
+-- Set runtime path of "/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/lib/libnav2_3d_static_layer_core.so" to ""
+-- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/nav2_3d_static_layer.xml
+-- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/ament_index/resource_index/package_run_dependencies/nav2_3d_static_layer
+-- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/ament_index/resource_index/parent_prefix_path/nav2_3d_static_layer
+-- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/environment/ament_prefix_path.sh
+-- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/environment/path.sh
+-- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/environment/path.dsv
+-- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/local_setup.bash
+-- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/local_setup.sh
+-- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/local_setup.zsh
+-- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/local_setup.dsv
+-- Installing: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/package.dsv
+-- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/ament_index/resource_index/packages/nav2_3d_static_layer
+-- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/ament_index/resource_index/nav2_costmap_2d__pluginlib__plugin/nav2_3d_static_layer
+-- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/cmake/nav2_3d_static_layerConfig.cmake
+-- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/cmake/nav2_3d_static_layerConfig-version.cmake
+-- Up-to-date: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/install/nav2_3d_static_layer/share/nav2_3d_static_layer/package.xml

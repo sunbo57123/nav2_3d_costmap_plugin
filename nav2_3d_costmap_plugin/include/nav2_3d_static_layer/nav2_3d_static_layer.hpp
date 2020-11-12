@@ -16,14 +16,14 @@ namespace nav2_3d_static_layer  // TODO rename ns to nav2_costmap_2d
 // TODO remove the leading indentation inside ns
 // TODO 3D static layer now inherits from obstacle layer
 // TODO but we have to discuss the overall design of 2D/3D data input and processing
-    class Nav23dStaticLayer : public nav2_costmap_2d::ObstacleLayer
+    class StaticLayer3D : public nav2_costmap_2d::CostmapLayer
     {
         /*
          *
          */
     public:
-        Nav23dStaticLayer(); // TODO a bit weird
-        virtual ~Nav23dStaticLayer();
+        StaticLayer3D(); // TODO a bit weird
+        ~StaticLayer3D();
 
 // TODO Confirm: Is the 3 methods declaration necessary here?
 // TODO Should 'override' keyword be placed here?
@@ -38,7 +38,10 @@ namespace nav2_3d_static_layer  // TODO rename ns to nav2_costmap_2d
                 nav2_costmap_2d::Costmap2D & master_grid,
                 int min_i, int min_j, int max_i, int max_j);
 
-        virtual void readPC(std::shared_ptr<sensor_msgs::msg::PointCloud2> cloud_pc2);
+
+        virtual void activate();
+        virtual void deactivate();
+        virtual void reset();
 
         virtual void cloudCallback(sensor_msgs::msg::PointCloud2::ConstSharedPtr pointcloud);
 // TODO Is a 'pass by reference' better for param cloud?
@@ -49,6 +52,7 @@ namespace nav2_3d_static_layer  // TODO rename ns to nav2_costmap_2d
     private:
 // TODO putting _ after var name to indicate private member, is this a new fashion?
         nav2_costmap_2d::Costmap2D map_2d_;
+        rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr _subscription;
         unsigned int map_size_x_;
         unsigned int map_size_y_;
         double map_resolution_;
@@ -58,8 +62,11 @@ namespace nav2_3d_static_layer  // TODO rename ns to nav2_costmap_2d
         /*
          *  mark_threshold_ : >> ?? <<
          */
-        unsigned char lethal_threshold_;
+        double lethal_threshold_;
         std::string topic_name_;
+
+        bool rolling_window_;
+        std::string global_frame_;
 
         /*
          * voxel grid parameters

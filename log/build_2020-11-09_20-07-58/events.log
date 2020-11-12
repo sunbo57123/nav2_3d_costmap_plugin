@@ -1,0 +1,157 @@
+[0.000000] (-) TimerEvent: {}
+[0.000110] (nav2_3d_static_layer) JobQueued: {'identifier': 'nav2_3d_static_layer', 'dependencies': OrderedDict()}
+[0.000158] (nav2_3d_static_layer) JobStarted: {'identifier': 'nav2_3d_static_layer'}
+[0.021972] (nav2_3d_static_layer) JobProgress: {'identifier': 'nav2_3d_static_layer', 'progress': 'cmake'}
+[0.023885] (nav2_3d_static_layer) JobProgress: {'identifier': 'nav2_3d_static_layer', 'progress': 'build'}
+[0.023965] (nav2_3d_static_layer) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer', '--', '-j6', '-l6'], 'cwd': '/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'sun'), ('LC_TIME', 'zh_CN.UTF-8'), ('SSH_AGENT_PID', '1121'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/sun/turtlebot3_ws/install/turtlebot3_msgs/lib:/home/sun/turtlebot3_ws/install/dynamixel_sdk/lib:/home/sun/navigation2/src/install/test_bond/lib:/home/sun/navigation2/src/install/nav2_controller/lib:/home/sun/navigation2/src/install/dwb_plugins/lib:/home/sun/navigation2/src/install/dwb_critics/lib:/home/sun/navigation2/src/install/dwb_core/lib:/home/sun/navigation2/src/install/nav_2d_utils/lib:/home/sun/navigation2/src/install/nav2_waypoint_follower/lib:/home/sun/navigation2/src/install/nav2_rviz_plugins/lib:/home/sun/navigation2/src/install/nav2_recoveries/lib:/home/sun/navigation2/src/install/nav2_planner/lib:/home/sun/navigation2/src/install/nav2_navfn_planner/lib:/home/sun/navigation2/src/install/nav2_map_server/lib:/home/sun/navigation2/src/install/nav2_lifecycle_manager/lib:/home/sun/navigation2/src/install/nav2_3d_costmap_plugin/lib:/home/sun/navigation2/src/install/costmap_queue/lib:/home/sun/navigation2/src/install/nav2_costmap_2d/lib:/home/sun/navigation2/src/install/nav2_bt_navigator/lib:/home/sun/navigation2/src/install/nav2_behavior_tree/lib:/home/sun/navigation2/src/install/nav2_amcl/lib:/home/sun/navigation2/src/install/nav2_util/lib:/home/sun/navigation2/src/install/bondcpp/lib:/home/sun/navigation2/src/install/dwb_msgs/lib:/home/sun/navigation2/src/install/nav_2d_msgs/lib:/home/sun/navigation2/src/install/nav2_voxel_grid/lib:/home/sun/navigation2/src/install/nav2_msgs/lib:/home/sun/navigation2/src/install/image_transport/lib:/home/sun/navigation2/src/install/image_geometry/lib:/home/sun/navigation2/src/install/gazebo_msgs/lib:/home/sun/navigation2/src/install/cv_bridge/lib:/home/sun/navigation2/src/install/camera_info_manager/lib:/home/sun/navigation2/src/install/camera_calibration_parsers/lib:/home/sun/navigation2/src/install/bond/lib:/home/sun/navigation2/src/install/behaviortree_cpp_v3/lib:/home/sun/Desktop/navigation2_tutorials/install/nav2_gradient_costmap_plugin/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('QT4_IM_MODULE', 'ibus'), ('HOME', '/home/sun'), ('OLDPWD', '/home/sun'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('MANAGERPID', '877'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=ee1205c277260ddbd5126c0d5fa8a8f0'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/sun/turtlebot3_ws/install:/home/sun/navigation2/src/install:/home/sun/Desktop/navigation2_tutorials/install'), ('ROS_DISTRO', 'foxy'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'sun'), ('JOURNAL_STREAM', '9:33410'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'sun'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', ':/home/sun/turtlebot3_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/home/sun/navigation2/src/install/behaviortree_cpp_v3/bin:/opt/ros/foxy/bin:/home/sun/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/sun:@/tmp/.ICE-unix/1224,unix/sun:/tmp/.ICE-unix/1224'), ('INVOCATION_ID', 'c46520ef143b4463b8aaaaba31e098fa'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/fe7a2388_aa19_497b_b1ce_a2663bd6d88f'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.129'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/sun/turtlebot3_ws/install/turtlebot3_simulations:/home/sun/turtlebot3_ws/install/turtlebot3_gazebo:/home/sun/turtlebot3_ws/install/turtlebot3:/home/sun/turtlebot3_ws/install/turtlebot3_teleop:/home/sun/turtlebot3_ws/install/turtlebot3_bringup:/home/sun/turtlebot3_ws/install/turtlebot3_node:/home/sun/turtlebot3_ws/install/turtlebot3_navigation2:/home/sun/turtlebot3_ws/install/turtlebot3_fake_node:/home/sun/turtlebot3_ws/install/turtlebot3_example:/home/sun/turtlebot3_ws/install/turtlebot3_msgs:/home/sun/turtlebot3_ws/install/turtlebot3_description:/home/sun/turtlebot3_ws/install/turtlebot3_cartographer:/home/sun/turtlebot3_ws/install/hls_lfcd_lds_driver:/home/sun/turtlebot3_ws/install/dynamixel_sdk:/home/sun/navigation2/src/install/vision_opencv:/home/sun/navigation2/src/install/bond_core:/home/sun/navigation2/src/install/test_bond:/home/sun/navigation2/src/install/navigation2:/home/sun/navigation2/src/install/nav2_dwb_controller:/home/sun/navigation2/src/install/nav2_controller:/home/sun/navigation2/src/install/dwb_plugins:/home/sun/navigation2/src/install/dwb_critics:/home/sun/navigation2/src/install/dwb_core:/home/sun/navigation2/src/install/nav_2d_utils:/home/sun/navigation2/src/install/nav2_waypoint_follower:/home/sun/navigation2/src/install/nav2_rviz_plugins:/home/sun/navigation2/src/install/nav2_recoveries:/home/sun/navigation2/src/install/nav2_planner:/home/sun/navigation2/src/install/nav2_navfn_planner:/home/sun/navigation2/src/install/nav2_map_server:/home/sun/navigation2/src/install/nav2_lifecycle_manager:/home/sun/navigation2/src/install/nav2_core:/home/sun/navigation2/src/install/nav2_3d_costmap_plugin:/home/sun/navigation2/src/install/costmap_queue:/home/sun/navigation2/src/install/nav2_costmap_2d:/home/sun/navigation2/src/install/nav2_bt_navigator:/home/sun/navigation2/src/install/nav2_behavior_tree:/home/sun/navigation2/src/install/nav2_amcl:/home/sun/navigation2/src/install/nav2_util:/home/sun/navigation2/src/install/bondcpp:/home/sun/navigation2/src/install/smclib:/home/sun/navigation2/src/install/simple_bringup:/home/sun/navigation2/src/install/opencv_tests:/home/sun/navigation2/src/install/dwb_msgs:/home/sun/navigation2/src/install/nav_2d_msgs:/home/sun/navigation2/src/install/nav2_voxel_grid:/home/sun/navigation2/src/install/nav2_msgs:/home/sun/navigation2/src/install/nav2_gazebo_spawner:/home/sun/navigation2/src/install/nav2_common:/home/sun/navigation2/src/install/image_common:/home/sun/navigation2/src/install/image_transport:/home/sun/navigation2/src/install/image_geometry:/home/sun/navigation2/src/install/gazebo_msgs:/home/sun/navigation2/src/install/gazebo_dev:/home/sun/navigation2/src/install/cv_bridge:/home/sun/navigation2/src/install/camera_info_manager:/home/sun/navigation2/src/install/camera_calibration_parsers:/home/sun/navigation2/src/install/bond:/home/sun/navigation2/src/install/behaviortree_cpp_v3:/home/sun/navigation2/src/install/angles:/home/sun/Desktop/navigation2_tutorials/install/nav2_gradient_costmap_plugin:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer'), ('TURTLEBOT3_MODEL', 'waffle_pi'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CLUTTER_IM_MODULE', 'ibus'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=ee1205c277260ddbd5126c0d5fa8a8f0'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/sun/turtlebot3_ws/build/turtlebot3_teleop:/home/sun/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.8/site-packages:/home/sun/turtlebot3_ws/build/turtlebot3_example:/home/sun/turtlebot3_ws/install/turtlebot3_example/lib/python3.8/site-packages:/home/sun/turtlebot3_ws/install/turtlebot3_msgs/lib/python3.8/site-packages:/home/sun/navigation2/src/install/test_bond/lib/python3.8/site-packages:/home/sun/navigation2/src/install/smclib/lib/python3.8/site-packages:/home/sun/navigation2/src/build/opencv_tests:/home/sun/navigation2/src/install/opencv_tests/lib/python3.8/site-packages:/home/sun/navigation2/src/install/dwb_msgs/lib/python3.8/site-packages:/home/sun/navigation2/src/install/nav_2d_msgs/lib/python3.8/site-packages:/home/sun/navigation2/src/install/nav2_msgs/lib/python3.8/site-packages:/home/sun/navigation2/src/build/nav2_gazebo_spawner:/home/sun/navigation2/src/install/nav2_gazebo_spawner/lib/python3.8/site-packages:/home/sun/navigation2/src/install/nav2_common/lib/python3.8/site-packages:/home/sun/navigation2/src/install/image_geometry/lib/python3.8/site-packages:/home/sun/navigation2/src/install/gazebo_msgs/lib/python3.8/site-packages:/home/sun/navigation2/src/install/cv_bridge/lib/python3.8/site-packages:/home/sun/navigation2/src/install/bond/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/sun/turtlebot3_ws/install/turtlebot3_simulations:/home/sun/turtlebot3_ws/install/turtlebot3_gazebo:/home/sun/turtlebot3_ws/install/turtlebot3:/home/sun/turtlebot3_ws/install/turtlebot3_bringup:/home/sun/turtlebot3_ws/install/turtlebot3_node:/home/sun/turtlebot3_ws/install/turtlebot3_navigation2:/home/sun/turtlebot3_ws/install/turtlebot3_fake_node:/home/sun/turtlebot3_ws/install/turtlebot3_msgs:/home/sun/turtlebot3_ws/install/turtlebot3_description:/home/sun/turtlebot3_ws/install/turtlebot3_cartographer:/home/sun/turtlebot3_ws/install/hls_lfcd_lds_driver:/home/sun/turtlebot3_ws/install/dynamixel_sdk:/home/sun/navigation2/src/install/vision_opencv:/home/sun/navigation2/src/install/bond_core:/home/sun/navigation2/src/install/test_bond:/home/sun/navigation2/src/install/navigation2:/home/sun/navigation2/src/install/nav2_dwb_controller:/home/sun/navigation2/src/install/nav2_controller:/home/sun/navigation2/src/install/dwb_plugins:/home/sun/navigation2/src/install/dwb_critics:/home/sun/navigation2/src/install/dwb_core:/home/sun/navigation2/src/install/nav_2d_utils:/home/sun/navigation2/src/install/nav2_waypoint_follower:/home/sun/navigation2/src/install/nav2_rviz_plugins:/home/sun/navigation2/src/install/nav2_recoveries:/home/sun/navigation2/src/install/nav2_planner:/home/sun/navigation2/src/install/nav2_navfn_planner:/home/sun/navigation2/src/install/nav2_map_server:/home/sun/navigation2/src/install/nav2_lifecycle_manager:/home/sun/navigation2/src/install/nav2_core:/home/sun/navigation2/src/install/nav2_3d_costmap_plugin:/home/sun/navigation2/src/install/costmap_queue:/home/sun/navigation2/src/install/nav2_costmap_2d:/home/sun/navigation2/src/install/nav2_bt_navigator:/home/sun/navigation2/src/install/nav2_behavior_tree:/home/sun/navigation2/src/install/nav2_amcl:/home/sun/navigation2/src/install/nav2_util:/home/sun/navigation2/src/install/bondcpp:/home/sun/navigation2/src/install/smclib:/home/sun/navigation2/src/install/simple_bringup:/home/sun/navigation2/src/install/dwb_msgs:/home/sun/navigation2/src/install/nav_2d_msgs:/home/sun/navigation2/src/install/nav2_voxel_grid:/home/sun/navigation2/src/install/nav2_msgs:/home/sun/navigation2/src/install/nav2_common:/home/sun/navigation2/src/install/image_common:/home/sun/navigation2/src/install/image_transport:/home/sun/navigation2/src/install/image_geometry:/home/sun/navigation2/src/install/gazebo_msgs:/home/sun/navigation2/src/install/gazebo_dev:/home/sun/navigation2/src/install/cv_bridge:/home/sun/navigation2/src/install/camera_info_manager:/home/sun/navigation2/src/install/camera_calibration_parsers:/home/sun/navigation2/src/install/bond:/home/sun/navigation2/src/install/behaviortree_cpp_v3:/home/sun/navigation2/src/install/angles:/home/sun/Desktop/navigation2_tutorials/install/nav2_gradient_costmap_plugin:/home/sun/turtlebot3_ws/install/turtlebot3_teleop:/home/sun/turtlebot3_ws/install/turtlebot3_example:/home/sun/navigation2/src/install/opencv_tests:/home/sun/navigation2/src/install/nav2_gazebo_spawner:/opt/ros/foxy')]), 'shell': False}
+[0.085553] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.6 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[0.099617] (-) TimerEvent: {}
+[0.115230] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.199893] (-) TimerEvent: {}
+[0.284076] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Found rclcpp: 2.1.0 (/opt/ros/foxy/share/rclcpp/cmake)\n'}
+[0.300035] (-) TimerEvent: {}
+[0.309267] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.312059] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Found rosidl_adapter: 1.1.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)\n'}
+[0.400250] (-) TimerEvent: {}
+[0.446137] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.489805] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 1.0.1 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)\n'}
+[0.493335] (nav2_3d_static_layer) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.500481] (-) TimerEvent: {}
+[0.600892] (-) TimerEvent: {}
+[0.641618] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Found nav2_costmap_2d: 0.4.3 (/home/sun/navigation2/src/install/nav2_costmap_2d/share/nav2_costmap_2d/cmake)\n'}
+[0.701082] (-) TimerEvent: {}
+[0.801446] (-) TimerEvent: {}
+[0.901889] (-) TimerEvent: {}
+[1.002368] (-) TimerEvent: {}
+[1.102878] (-) TimerEvent: {}
+[1.203270] (-) TimerEvent: {}
+[1.303749] (-) TimerEvent: {}
+[1.404285] (-) TimerEvent: {}
+[1.504777] (-) TimerEvent: {}
+[1.605206] (-) TimerEvent: {}
+[1.705637] (-) TimerEvent: {}
+[1.806066] (-) TimerEvent: {}
+[1.906489] (-) TimerEvent: {}
+[2.006904] (-) TimerEvent: {}
+[2.107387] (-) TimerEvent: {}
+[2.196223] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Found pcl_conversions: 2.2.0 (/opt/ros/foxy/share/pcl_conversions/cmake)\n'}
+[2.207603] (-) TimerEvent: {}
+[2.307972] (-) TimerEvent: {}
+[2.360059] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.3.7)\n'}
+[2.408139] (-) TimerEvent: {}
+[2.450567] (nav2_3d_static_layer) StdoutLine: {'line': b'-- The imported target "vtkParseOGLExt" references the file\n'}
+[2.450752] (nav2_3d_static_layer) StdoutLine: {'line': b'   "/usr/bin/vtkParseOGLExt-7.1"\n'}
+[2.450871] (nav2_3d_static_layer) StdoutLine: {'line': b'but this file does not exist.  Possible reasons include:\n'}
+[2.450985] (nav2_3d_static_layer) StdoutLine: {'line': b'* The file was deleted, renamed, or moved to another location.\n'}
+[2.451098] (nav2_3d_static_layer) StdoutLine: {'line': b'* An install or uninstall procedure did not complete successfully.\n'}
+[2.451197] (nav2_3d_static_layer) StdoutLine: {'line': b'* The installation package was faulty and contained\n'}
+[2.451334] (nav2_3d_static_layer) StdoutLine: {'line': b'   "/usr/lib/cmake/vtk-7.1/VTKTargets.cmake"\n'}
+[2.451430] (nav2_3d_static_layer) StdoutLine: {'line': b'but not all the files it references.\n'}
+[2.451525] (nav2_3d_static_layer) StdoutLine: {'line': b'\n'}
+[2.451797] (nav2_3d_static_layer) StdoutLine: {'line': b'-- The imported target "vtkRenderingPythonTkWidgets" references the file\n'}
+[2.451996] (nav2_3d_static_layer) StdoutLine: {'line': b'   "/usr/lib/x86_64-linux-gnu/libvtkRenderingPythonTkWidgets.so"\n'}
+[2.452151] (nav2_3d_static_layer) StdoutLine: {'line': b'but this file does not exist.  Possible reasons include:\n'}
+[2.452289] (nav2_3d_static_layer) StdoutLine: {'line': b'* The file was deleted, renamed, or moved to another location.\n'}
+[2.452649] (nav2_3d_static_layer) StdoutLine: {'line': b'* An install or uninstall procedure did not complete successfully.\n'}
+[2.452781] (nav2_3d_static_layer) StdoutLine: {'line': b'* The installation package was faulty and contained\n'}
+[2.452894] (nav2_3d_static_layer) StdoutLine: {'line': b'   "/usr/lib/cmake/vtk-7.1/VTKTargets.cmake"\n'}
+[2.453009] (nav2_3d_static_layer) StdoutLine: {'line': b'but not all the files it references.\n'}
+[2.453120] (nav2_3d_static_layer) StdoutLine: {'line': b'\n'}
+[2.453230] (nav2_3d_static_layer) StdoutLine: {'line': b'-- The imported target "vtk" references the file\n'}
+[2.453340] (nav2_3d_static_layer) StdoutLine: {'line': b'   "/usr/bin/vtk"\n'}
+[2.453451] (nav2_3d_static_layer) StdoutLine: {'line': b'but this file does not exist.  Possible reasons include:\n'}
+[2.453561] (nav2_3d_static_layer) StdoutLine: {'line': b'* The file was deleted, renamed, or moved to another location.\n'}
+[2.453671] (nav2_3d_static_layer) StdoutLine: {'line': b'* An install or uninstall procedure did not complete successfully.\n'}
+[2.453782] (nav2_3d_static_layer) StdoutLine: {'line': b'* The installation package was faulty and contained\n'}
+[2.453880] (nav2_3d_static_layer) StdoutLine: {'line': b'   "/usr/lib/cmake/vtk-7.1/VTKTargets.cmake"\n'}
+[2.453981] (nav2_3d_static_layer) StdoutLine: {'line': b'but not all the files it references.\n'}
+[2.454082] (nav2_3d_static_layer) StdoutLine: {'line': b'\n'}
+[2.454178] (nav2_3d_static_layer) StdoutLine: {'line': b'-- The imported target "pvtk" references the file\n'}
+[2.454274] (nav2_3d_static_layer) StdoutLine: {'line': b'   "/usr/bin/pvtk"\n'}
+[2.454370] (nav2_3d_static_layer) StdoutLine: {'line': b'but this file does not exist.  Possible reasons include:\n'}
+[2.454467] (nav2_3d_static_layer) StdoutLine: {'line': b'* The file was deleted, renamed, or moved to another location.\n'}
+[2.454564] (nav2_3d_static_layer) StdoutLine: {'line': b'* An install or uninstall procedure did not complete successfully.\n'}
+[2.454682] (nav2_3d_static_layer) StdoutLine: {'line': b'* The installation package was faulty and contained\n'}
+[2.454779] (nav2_3d_static_layer) StdoutLine: {'line': b'   "/usr/lib/cmake/vtk-7.1/VTKTargets.cmake"\n'}
+[2.454875] (nav2_3d_static_layer) StdoutLine: {'line': b'but not all the files it references.\n'}
+[2.454971] (nav2_3d_static_layer) StdoutLine: {'line': b'\n'}
+[2.471222] (nav2_3d_static_layer) StdoutLine: {'line': b'-- OpenNI found (include: /usr/include/ni, lib: /usr/lib/libOpenNI.so)\n'}
+[2.477881] (nav2_3d_static_layer) StdoutLine: {'line': b'-- OpenNI2 found (include: /usr/include/openni2, lib: /usr/lib/libOpenNI2.so)\n'}
+[2.478374] (nav2_3d_static_layer) StderrLine: {'line': b'** WARNING ** io features related to pcap will be disabled\n'}
+[2.478556] (nav2_3d_static_layer) StderrLine: {'line': b'** WARNING ** io features related to png will be disabled\n'}
+[2.490010] (nav2_3d_static_layer) StderrLine: {'line': b'** WARNING ** io features related to libusb-1.0 will be disabled\n'}
+[2.495728] (nav2_3d_static_layer) StdoutLine: {'line': b'-- OpenNI found (include: /usr/include/ni, lib: /usr/lib/libOpenNI.so)\n'}
+[2.501502] (nav2_3d_static_layer) StdoutLine: {'line': b'-- OpenNI2 found (include: /usr/include/openni2, lib: /usr/lib/libOpenNI2.so)\n'}
+[2.508338] (-) TimerEvent: {}
+[2.512893] (nav2_3d_static_layer) StdoutLine: {'line': b'-- QHULL found (include: /usr/include, lib: optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so)\n'}
+[2.513233] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_COMMON\n'}
+[2.513554] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_KDTREE\n'}
+[2.514063] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_OCTREE\n'}
+[2.514525] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_SEARCH\n'}
+[2.514990] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_SAMPLE_CONSENSUS\n'}
+[2.515463] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_FILTERS\n'}
+[2.516160] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_2D\n'}
+[2.516788] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_GEOMETRY\n'}
+[2.517139] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_IO\n'}
+[2.517628] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_FEATURES\n'}
+[2.518122] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_ML\n'}
+[2.518578] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_SEGMENTATION\n'}
+[2.519149] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_VISUALIZATION\n'}
+[2.519743] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_SURFACE\n'}
+[2.520371] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_REGISTRATION\n'}
+[2.520910] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_KEYPOINTS\n'}
+[2.521435] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_TRACKING\n'}
+[2.521927] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_RECOGNITION\n'}
+[2.522517] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_STEREO\n'}
+[2.522960] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_OUTOFCORE\n'}
+[2.523481] (nav2_3d_static_layer) StdoutLine: {'line': b'-- looking for PCL_PEOPLE\n'}
+[2.608582] (-) TimerEvent: {}
+[2.708956] (-) TimerEvent: {}
+[2.809415] (-) TimerEvent: {}
+[2.909887] (-) TimerEvent: {}
+[3.010319] (-) TimerEvent: {}
+[3.062120] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.9.5 (/opt/ros/foxy/share/ament_lint_auto/cmake)\n'}
+[3.110561] (-) TimerEvent: {}
+[3.133770] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Found ament_cmake_gtest: 0.9.6 (/opt/ros/foxy/share/ament_cmake_gtest/cmake)\n'}
+[3.140087] (nav2_3d_static_layer) StdoutLine: {'line': b"-- Found gtest sources under '/opt/ros/foxy/src/gtest_vendor': C++ tests using 'Google Test' will be built\n"}
+[3.210875] (-) TimerEvent: {}
+[3.311342] (-) TimerEvent: {}
+[3.411742] (-) TimerEvent: {}
+[3.512238] (-) TimerEvent: {}
+[3.612662] (-) TimerEvent: {}
+[3.706040] (nav2_3d_static_layer) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[3.706910] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/nav2_3d_costmap_plugin/include\n'}
+[3.707073] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[3.708592] (nav2_3d_static_layer) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[3.711298] (nav2_3d_static_layer) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[3.712852] (nav2_3d_static_layer) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the style conventions in PEP 257\n"}
+[3.712974] (-) TimerEvent: {}
+[3.721429] (nav2_3d_static_layer) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[3.721555] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[3.722659] (nav2_3d_static_layer) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[3.726891] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Configuring done\n'}
+[3.813212] (-) TimerEvent: {}
+[3.896914] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Generating done\n'}
+[3.899642] (nav2_3d_static_layer) StdoutLine: {'line': b'-- Build files have been written to: /home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/build/nav2_3d_static_layer\n'}
+[3.913421] (-) TimerEvent: {}
+[3.941133] (nav2_3d_static_layer) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target nav2_3d_static_layer_core\x1b[0m\n'}
+[3.952658] (nav2_3d_static_layer) StdoutLine: {'line': b'[ 50%] Built target gtest_main\n'}
+[3.952867] (nav2_3d_static_layer) StdoutLine: {'line': b'[ 50%] Built target gtest\n'}
+[4.006789] (nav2_3d_static_layer) StdoutLine: {'line': b'[ 62%] \x1b[32mBuilding CXX object CMakeFiles/nav2_3d_static_layer_core.dir/src/nav2_3d_static_layer.cpp.o\x1b[0m\n'}
+[4.013622] (-) TimerEvent: {}
+[4.114340] (-) TimerEvent: {}
+[4.214778] (-) TimerEvent: {}
+[4.315215] (-) TimerEvent: {}
+[4.415679] (-) TimerEvent: {}
+[4.516211] (-) TimerEvent: {}
+[4.616660] (-) TimerEvent: {}
+[4.717106] (-) TimerEvent: {}
+[4.817578] (-) TimerEvent: {}
+[4.918042] (-) TimerEvent: {}
+[5.009156] (nav2_3d_static_layer) StderrLine: {'line': b'make[2]: *** [CMakeFiles/nav2_3d_static_layer_core.dir/build.make:63: CMakeFiles/nav2_3d_static_layer_core.dir/src/nav2_3d_static_layer.cpp.o] Interrupt\n'}
+[5.009656] (nav2_3d_static_layer) StderrLine: {'line': b'make[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/nav2_3d_static_layer_core.dir/all] Interrupt\n'}
+[5.010464] (nav2_3d_static_layer) StderrLine: {'line': b'make: *** [Makefile:141: all] Interrupt\n'}
+[5.015718] (nav2_3d_static_layer) CommandEnded: {'returncode': -2}
+[5.016359] (nav2_3d_static_layer) JobEnded: {'identifier': 'nav2_3d_static_layer', 'rc': 'SIGINT'}
+[5.018274] (-) TimerEvent: {}
+[5.026605] (-) EventReactorShutdown: {}

@@ -1,0 +1,5 @@
+<library path="nav2_3d_static_layer_core">
+    <class name="nav2_3d_static_layer/Nav23dStaticLayer" type="nav2_3d_static_layer::Nav23dStaticLayer" base_class_type="nav2_costmap_2d::Layer">
+        <description>This plugin provide the conversion from pc2 to 2d costmap info</description>
+    </class>
+</library>
