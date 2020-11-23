@@ -11,8 +11,6 @@
 #include "nav2_costmap_2d/layered_costmap.hpp"
 #include "sensor_msgs/msg/point_cloud2.hpp"
 #include "gtest/gtest.h"
-#include "pcl/io/pcd_io.h"
-#include "pcl_conversions/pcl_conversions.h"
 #include "nav2_3d_static_layer/nav2_3d_static_layer.hpp"
 
 #include "../test_header.hpp"
@@ -28,112 +26,87 @@ public:
 };
 RclCppFixture g_rclcppfixture;
 
-//class TestLifecycleNode : public nav2_util::LifecycleNode
-//{
-//public:
-//    explicit TestLifecycleNode(const std::string & name)
-//            : nav2_util::LifecycleNode(name)
-//    {
-//    }
-//
-//    nav2_util::CallbackReturn on_configure(const rclcpp_lifecycle::State &)
-//    {
-//        return nav2_util::CallbackReturn::SUCCESS;
-//    }
-//
-//    nav2_util::CallbackReturn on_activate(const rclcpp_lifecycle::State &)
-//    {
-//        return nav2_util::CallbackReturn::SUCCESS;
-//    }
-//
-//    nav2_util::CallbackReturn on_deactivate(const rclcpp_lifecycle::State &)
-//    {
-//        return nav2_util::CallbackReturn::SUCCESS;
-//    }
-//
-//    nav2_util::CallbackReturn on_cleanup(const rclcpp_lifecycle::State &)
-//    {
-//        return nav2_util::CallbackReturn::SUCCESS;
-//    }
-//
-//    nav2_util::CallbackReturn onShutdown(const rclcpp_lifecycle::State &)
-//    {
-//        return nav2_util::CallbackReturn::SUCCESS;
-//    }
-//
-//    nav2_util::CallbackReturn onError(const rclcpp_lifecycle::State &)
-//    {
-//        return nav2_util::CallbackReturn::SUCCESS;
-//    }
-//};
-// create PC2Publisher for publishing 0.5s/pc2 info
 class PC2Publisher : public rclcpp::Node
 {
-    public:
-        PC2Publisher(): Node("pc2_publisher")
-        {
-            readPCD(_pc2);
-            _publisher = this->create_publisher<sensor_msgs::msg::PointCloud2>("pc2_info", 10);
-            _timer = this->create_wall_timer( 500ms, std::bind(&PC2Publisher::timer_callback, this));
-        }
-
-        void CreatePC2Msg()
-        {
-            sensor_msgs::msg::PointCloud2 test_pc2;
-        }
-
-        void readPCD(sensor_msgs::msg::PointCloud2 pc2)
-        {
-            pcl::PCLPointCloud2 pclpc2;
-            std::string filePath = "/home/sun/Desktop/plugin_github/nav2_3d_costmap_plugin/nav2_3d_costmap_plugin/test/map/diagonalMap.pcd";
-            pcl::PCDReader reader;
-            reader.read(
-                    filePath,
-                    pclpc2
-                    );
-            pcl_conversions::fromPCL(pclpc2, pc2);
-        }
-
-    private:
-        void timer_callback()
-        {
-            RCLCPP_INFO(
-                    this->get_logger(),
-                    "sending..."
-                    );
-            _publisher->publish(_pc2);
-        }
-
-        rclcpp::TimerBase::SharedPtr _timer;
-        sensor_msgs::msg::PointCloud2 _pc2;
-        rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr _publisher;
-
-};
-
-class MainNode :public nav2_util::LifecycleNode
-{
 public:
-    MainNode():nav2_util::LifecycleNode("main_node")
+    PC2Publisher(): Node("pc2_publisher")
     {
+        CreatePC2Msg();
+        rclcpp::QoS map_qos(10);
+        map_qos.transient_local();
+        map_qos.reliable();
+        map_qos.keep_last(1);
+        _publisher = this->create_publisher<sensor_msgs::msg::PointCloud2>("pc2_info", map_qos);
+        _publisher->publish(_pc2);
+    }
+    ~PC2Publisher(){
+        _publisher.reset();
     }
 
-    ~MainNode() {}
+    void CreatePC2Msg()
+    {
+        unsigned int height = 100;
+        unsigned int width = 100;
+        _pc2.set__height(1);
+        _pc2.set__width(10000);
+        sensor_msgs::PointCloud2Modifier modifier(_pc2);
+        modifier.setPointCloud2FieldsByString(1, "xyz");
+        modifier.resize(_pc2.height * _pc2.width);
 
-protected:
-    void publishMap();
-    void addLayer();
-    void multiThread();
+        sensor_msgs::PointCloud2Iterator<float> iter_x(_pc2, "x");
+        sensor_msgs::PointCloud2Iterator<float> iter_y(_pc2, "y");
+        sensor_msgs::PointCloud2Iterator<float> iter_z(_pc2, "z");
+
+        for (int y=0; y < height; y++){
+            for(int x = 0; x < width; x++){
+                *iter_x = x;
+                *iter_y = y;
+                if (x < 50 && y < 50) {
+                    *iter_z = 3.0;
+                }
+                else{
+                    *iter_z = 1.0;
+                }
+                ++iter_x;
+                ++iter_y;
+                ++iter_z;
+            }
+        }
+    }
+
+    void republish()
+    {
+        _publisher->publish(std::move(_pc2));
+    }
+
+    void printPC2(){
+
+    }
+
+private:
+    sensor_msgs::msg::PointCloud2 _pc2;
+    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr _publisher;
 
 };
 
-void MainNode::publishMap() {
-    std::shared_ptr<PC2Publisher> map_pub = std::make_shared<PC2Publisher>();
-    rclcpp::spin(map_pub);
+class TestNode :public ::testing::Test
+{
+public:
+    TestNode() {
+        map_pub_ = std::make_shared<PC2Publisher>();
+    }
+    ~TestNode() {}
+    void createPublisher();
+    void addLayer();
+    void publish();
+private:
+    std::shared_ptr<nav2_util::LifecycleNode> node_;
+    std::shared_ptr<PC2Publisher> map_pub_;
+};
+void TestNode::createPublisher() {
+    map_pub_ = std::make_shared<PC2Publisher>();
 }
-
-void MainNode::addLayer(){
-    std::shared_ptr<nav2_util::LifecycleNode> node_ = std::make_shared<nav2_util::LifecycleNode>("test_node");
-
+void TestNode::addLayer() {
     node_ = std::make_shared<nav2_util::LifecycleNode>("test_node");
     tf2_ros::Buffer tf(node_->get_clock());
     nav2_costmap_2d::LayeredCostmap layers("frame", false, false);
@@ -141,48 +114,33 @@ void MainNode::addLayer(){
     std::shared_ptr<nav2_3d_static_layer::StaticLayer3D> nlayer = std::make_shared<nav2_3d_static_layer::StaticLayer3D>();
     nlayer->initialize(&layers, "static3d", &tf, node_, nullptr, nullptr /*TODO*/);
 
-//    layers.addPlugin(std::shared_ptr<nav2_costmap_2d::Layer>(nlayer));
-//    addObservation(nlayer, 0.0, 0.0, 1.0 / 2, 0, 0, 1.0 / 2);
-//    layers.updateMap(0, 0, 0);
-//    nav2_costmap_2d::Costmap2D * costmap = layers.getCostmap();
-//    printMap(*costmap);
+    while (!nlayer->receivedMap()){
+        map_pub_->republish();
+        rclcpp::spin_some(node_->get_node_base_interface());
+    }
+    layers.addPlugin(std::shared_ptr<nav2_costmap_2d::Layer>(nlayer));
+
+    layers.updateMap(0, 0, 0);
+    nav2_costmap_2d::Costmap2D * costmap = layers.getCostmap();
+    printMap(*costmap);
 }
 
-class TestNode :public ::testing::Test
-{
-public:
-    TestNode() {
-
-        using SingleThreadedExecutor = rclcpp::executors::SingleThreadedExecutor;
-
-//        SingleThreadedExecutor executor_pub;
-//        std::shared_ptr<PC2Publisher> map_pub = std::make_shared<PC2Publisher>();
-//        executor_pub.add_node(map_pub);
-//        std::thread pub_thread(std::bind(&SingleThreadedExecutor::spin, &executor_pub));
-
-        SingleThreadedExecutor executor_sub;
-        std::shared_ptr<nav2_util::LifecycleNode> main_node = std::make_shared<nav2_util::LifecycleNode>("main_node");
-        executor_sub.add_node(main_node->get_node_base_interface());
-
-        std::thread sub_thread(std::bind(&SingleThreadedExecutor::spin, &executor_sub));
-
-//        pub_thread.join();
-        sub_thread.join();
-
-        rclcpp::shutdown();
-    }
-
-    ~TestNode() {}
-
-
-};
-
+void TestNode::publish() {
+    RCLCPP_INFO(
+            rclcpp::get_logger("test_node"),
+            "publishing"
+    );
+    map_pub_->republish();
+    int b = 0;
+}
 
 TEST_F(TestNode, testTemplate){
+//    createPublisher();
+    publish();
+    addLayer();
 
 
 }
-
-
+//TODO static layer+nlayer
 
 

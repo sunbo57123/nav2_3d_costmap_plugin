@@ -42,8 +42,9 @@ namespace nav2_3d_static_layer  // TODO rename ns to nav2_costmap_2d
         virtual void activate();
         virtual void deactivate();
         virtual void reset();
-
+        virtual bool receivedMap();
         virtual void cloudCallback(sensor_msgs::msg::PointCloud2::ConstSharedPtr pointcloud);
+        virtual void filteredPoints(sensor_msgs::msg::PointCloud2 pointcloud);
 // TODO Is a 'pass by reference' better for param cloud?
 // TODO Confirm: sensor_msgs::msg::PointCloud2 looks like a complex structure
 // TODO There are many different ways passing arguments here: ref, pointer, shared_ptr, dedicated ConstSharedPtr
@@ -74,6 +75,7 @@ namespace nav2_3d_static_layer  // TODO rename ns to nav2_costmap_2d
         float voxel_leafsize_;  // TODO Should voxel_leafsize_ be double?
         double min_z_height_;
         double max_z_height_;
+        bool map_received_;
     };
 
 }
