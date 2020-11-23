@@ -122,7 +122,6 @@ namespace nav2_3d_static_layer
         };
 //        convertTo2d(*pointcloud);
         filteredPoints(*pointcloud);
-        map_2d_.saveMap("/home/sun/navigation2/src/navigation2/simple_bringup/2_simple_result.pmg");
     }
 
     bool
@@ -156,19 +155,13 @@ namespace nav2_3d_static_layer
                     unsigned int map_y = (unsigned int) (*iter_y) * scale;
                     if (map_2d_.getCost(map_x, map_y) != LETHAL_OBSTACLE){
                         map_2d_.setCost(map_x, map_y, LETHAL_OBSTACLE);
-                        RCLCPP_INFO(
-                                logger_,
-                                "set x %d, y %d is z %d", map_x, map_y, LETHAL_OBSTACLE
-                                );
                     }
                 }
                 ++iter_z;
                 ++iter_y;
                 ++iter_x;
             }
-
         }
-
     }
 
     void
